@@ -1,23 +1,13 @@
-import logo from './logo.svg';
+import { blueGrey } from '@material-ui/core/colors';
 import './App.css';
-
+import API from './Components/API'
+import API2 from './Components/API2';
+import img from './images/bg.jpg'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg' >
+      {/* <API  /> */}
+     <API2/>
     </div>
   );
 }

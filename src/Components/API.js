@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import '../App.css';
-import Axios from 'axios'
+import Axios from 'axios';
 import ImgMediaCard from './MediaCard';
-import { ImportantDevices } from '@material-ui/icons';
+import Grid from '@material-ui/core/Grid';
 
+import { Doughnut,Bar } from 'react-chartjs-2';
 function API() {
     const [confirmed,setconfirmed]=useState(0);
     const [recovered,setrecovered]=useState(0);
@@ -22,18 +23,36 @@ useEffect(() => {
     
 },[])
     return (
-        <div >
-            <div style={{position:'absoulte'}}>
-            <ImgMediaCard  text='Confirmed Cases' value={confirmed}  color='#F0C5D5'   />
-            </div>
-            <div style={{position:'absoulte'}}>
-
+        <div  >
+            <Grid container spacing={3}>
+           <Grid item xs={12} md={4} lg={4}>
+        <ImgMediaCard  text='Confirmed Cases' value={confirmed}  color='#F0C5D5'   />       
       <ImgMediaCard text='Recovered Cases' value={recovered} color='#F5C9B2' />
-      </div>
-      <div style={{position:'absoulte'}}>
-
       <ImgMediaCard text='Death Cases' value={deaths} color='#8AC0DE' />
-           </div>
+        </Grid>
+        <Grid item xs={12} md={8} lg={8} >
+               {/* *****Graph*** phle npm i chart.js s kia then import kia donut chart phir data dedia */}
+
+          <Doughnut  data={{
+          labels: ['confirmed', 'Recovered', 'Deaths'], //x-axis
+          datasets: [
+            {
+              label: 'People',
+              backgroundColor: ['#F0C5D5', '#98FB98', 'red'],
+              data: [confirmed, recovered, deaths], //y-axis
+             
+            },
+          ],
+        }
+       
+       }
+       />
+        </Grid>
+        </Grid>
+            
+           
+      
+           
         </div>
     )
 }

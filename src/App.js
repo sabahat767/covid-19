@@ -8,7 +8,7 @@ import img from './images/bg.jpg'
 function App() {
   return (
     <div className='bg' >
-      {/* <API  /> */}
+       <API />
      {/* <API2/> */}
    <Lifecycle/>
     </div>

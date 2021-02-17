@@ -10,7 +10,7 @@ function App() {
     <div className='bg' >
        <API />
      {/* <API2/> */}
-   <Lifecycle/>
+    {/*<Lifecycle/>*/}
     </div>
   );
 }

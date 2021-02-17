@@ -30,6 +30,8 @@ export class Lifecycle extends Component {
                 <li>{this.state.recoverd}</li>
                 <li>{this.state.death}</li>
                 <ImgMediaCard  text='Confirmed Cases' value={this.state.confirm}  color='#F0C5D5'   />
+             <ImgMediaCard  text='Recovered Cases' value={this.state.recovered}  color='#FFC388'   />
+             <ImgMediaCard  text='Deaths Cases' value={this.state.deaths}  color='#EDEB4C'   />
             </div>
         )
     }
